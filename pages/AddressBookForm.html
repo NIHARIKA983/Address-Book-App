@@ -27,6 +27,69 @@
                     <img src="../assets/cancel.png" alt="">
                     </a>
                 </div><br>
+                <div class="row-content">
+                    <input class="input" type="text" id="name" name="name" placeholder=""
+                           onchange="this.setAttribute('value',this.value)" required>
+                    <label class="form-label" for="name">Full Name</label>
+                </div>
+                <div class="row-content">
+                    <textarea  class="input-text" name="address" id="address" placeholder="" 
+                               onchange="this.setAttribute('value',this.value)" 
+                               style="height: 80px;" required></textarea>
+                    <label class="form-label-text" for="address">Address</label>
+                </div>
+                <div class="row-content">
+                    <select id="city" name="City" class="city" required>
+                        <option value="">Select City</option>
+                        <option value="Bengaluru">Bengaluru</option>
+                        <option value="Chikmagalur">Chikmagalur</option>
+                        <option value="Hassan">Hassan</option>
+                        <option value="Shivamogga">Shivamogga</option>
+                        <option value="">Coimbatore</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Indore">Indore</option>
+                        <option value="Kolkata">Kolkata</option>
+                        <option value="Lucknow">Lucknow</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Nashik">Nashik</option>
+                        <option value="Pune">Pune</option>
+                        <option value="Surat">Surat</option>
+                        <option value="Srinagar">Srinagar</option>
+                    </select>&nbsp;&nbsp;&nbsp;
+                    <select id="state" name="State" class="state" required>
+                        <option value="">Select State</option>
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Jammu & Kashmir">Jammu & Kashmir</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="West Bengal">West Bengal</option>
+
+                    </select>&nbsp;&nbsp;&nbsp;
+                    <select id="zipcode" name="Zipcode" class="zipcode">
+                        <option value="">Select ZipCode</option>
+                        <option value="110100">110100</option>
+                        <option value="121102">121102</option>
+                        <option value="222101">222101</option>
+                        <option value="220245">220245</option>
+                        <option value="330211">330211</option>
+                        <option value="332101">332101</option>
+                        <option value="411001">411001</option>
+                        <option value="470201">470201</option>
+                        <option value="590101">590101</option>
+                        <option value="611101">611101</option>
+                    </select>
+                </div>
+                <div class="row-content">
+                    <input type="text" class="input" name="phone" id="phone" placeholder="" 
+                           onchange="this.setAttribute('value',this.value)" required>
+                    <label class="form-label" for="phoneNumber">Phone Number</label>
+                </div>
             </form>
         </div>
     </body>
