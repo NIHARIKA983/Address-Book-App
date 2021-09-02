@@ -45,9 +45,9 @@ class AddressBook {
     }
     
     toString(){
-        return "[ First Name: "+this.firstName+", Last Name: "+this.lastName+", Address: "+this.address+
+        return "[ Name: "+this.name+", Address: "+this.address+
                 ", City: "+this.city+", State: "+this.state+", Zip Code: "+this.zipCode+", Phone Number: "+
-                this.phoneNumber+", Email: "+this.email+" ]";
+                this.phoneNumber+" ]";
 
     }
 }

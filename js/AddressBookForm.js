@@ -52,8 +52,47 @@ window.addEventListener('DOMContentLoaded',()=>{
 //populate & save addressbook object when submit buton is clicked
 const save = ()=> {
     try{
-        let addressbook = new AddressBook();
+        let addressbook = createAddressBook();
     }catch(e){
         return;
     }
+}
+
+//function to populate employee object with html form data
+const createAddressBook = ()=> {
+    let addressbook = new AddressBook();
+    try {
+        addressbook.name = getInputValueById('#name');
+    }catch(e){
+        setTextValue('.text-error',e);
+        throw e;
+    }
+    try {
+        addressbook.address = getInputValueById('#address');
+    }catch(e){
+        setTextValue('.addr-error',e);
+        throw e;
+    }
+    addressbook.city = getInputValueById('#city');
+    addressbook.state = getInputValueById('#state');
+    addressbook.zipCode = getInputValueById('#zipcode');
+    try {
+        addressbook.phoneNumber = getInputValueById('#phone');
+    }catch(e){
+        setTextValue('.contact-error',e);
+        throw e;
+    }
+    alert(addressbook.toString());
+    return addressbook;
+}
+
+//function to get form values by Id
+const getInputValueById = (id=>{
+    let value = document.querySelector(id).value;
+    return value;
+});
+//function to set text value
+const setTextValue = (id,value) => {
+    const element = document.querySelector(id);
+    element.textContent = value;
 }
