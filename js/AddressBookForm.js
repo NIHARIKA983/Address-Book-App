@@ -52,7 +52,8 @@ window.addEventListener('DOMContentLoaded',()=>{
 //populate & save addressbook object when submit buton is clicked
 const save = ()=> {
     try{
-        let addressbook = createAddressBook();
+        let addressbookData = createAddressBook();
+        createAndUpdateStorage(addressbookData);
     }catch(e){
         return;
     }
@@ -95,4 +96,16 @@ const getInputValueById = (id=>{
 const setTextValue = (id,value) => {
     const element = document.querySelector(id);
     element.textContent = value;
+}
+
+//create and update local storage with addressbook object
+function createAndUpdateStorage(addressbookData){
+    let addressbookList = JSON.parse(localStorage.getItem("AddressBookList"));
+    if(addressbookList != undefined){
+        addressbookList.push(addressbookData);
+    }else{
+        addressbookList = [addressbookData];
+    }
+    alert(addressbookList.toString());
+    localStorage.setItem("AddressBookList",JSON.stringify(addressbookList));
 }
