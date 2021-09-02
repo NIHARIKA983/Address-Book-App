@@ -33,4 +33,11 @@ body {
     color: midnightblue;
 }
 
+.heading{
+    align-items: center;
+    color: blue;
+    width: 90%;
+    text-align: center;
+}
+
 * {box-sizing: border-box;}
