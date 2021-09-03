@@ -1,3 +1,5 @@
+let isUpdate = false;
+let addressbookObj = {};
 //add event listener when document gets loaded
 window.addEventListener('DOMContentLoaded',()=>{
     var addressbook = new AddressBook;
@@ -47,6 +49,7 @@ window.addEventListener('DOMContentLoaded',()=>{
             contactError.textContent = e;
         }
     });
+    checkForUpdate();
 });
 
 //populate & save addressbook object when submit buton is clicked
@@ -83,6 +86,7 @@ const createAddressBook = ()=> {
         setTextValue('.contact-error',e);
         throw e;
     }
+    addressbook.id = new Date().getTime();
     alert(addressbook.toString());
     return addressbook;
 }
@@ -123,4 +127,23 @@ const resetForm=()=>{
 const setValue=(id,value)=>{
     const element = document.querySelector(id);
     element.value = value;
+}
+
+//check for update
+const checkForUpdate = () => {
+    const addressbookJson = localStorage.getItem('editPerson');
+    isUpdate = addressbookJson ? true : false ;
+    if (!isUpdate) return;
+    addressbookObj = JSON.parse(addressbookJson);
+    setForm();
+}
+
+//set updated values
+const setForm = () => {
+    setValue('#name',addressbookObj._name);
+    setValue('#address',addressbookObj._address);
+    setValue('#city',addressbookObj._city);
+    setValue('#state',addressbookObj._state);
+    setValue('#zipcode',addressbookObj._zipCode);
+    setValue('#phone',addressbookObj._phoneNumber);
 }

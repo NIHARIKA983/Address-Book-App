@@ -5,6 +5,7 @@ window.addEventListener('DOMContentLoaded', () => {
     addressbookList = getPersonDataFromLocalStorage();
     document.querySelector('.person-count').textContent = addressbookList.length;
     createInnerHTML();
+    localStorage.removeItem('editPerson');
 });
 //get list of Person data from local storage
 const getPersonDataFromLocalStorage = () => {
@@ -49,4 +50,12 @@ const remove = (node)=> {
     localStorage.setItem("AddressBookList",JSON.stringify(addressbookList));
     document.querySelector('.person-count').textContent = addressbookList.length;
     createInnerHTML();
+}
+
+//update person details 
+const update = (node) => {
+    let addressbookData = addressbookList.find(personData=>personData._id == node.id);
+    if (!addressbookData) return;
+    localStorage.setItem('editPerson',JSON.stringify(addressbookData));
+    window.location.replace(site_properties.add_person_page);    
 }
