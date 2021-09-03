@@ -77,6 +77,18 @@ body {
     text-align: center;
 } 
 
+.add-button{
+    letter-spacing: 0px;
+    color: #ffffff;
+    opacity: 1;
+    border: none ;
+    border-radius: 5px;
+    padding: 5px 10px;
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+} 
+
 .row-content{
     display: flex;
     position: relative;
