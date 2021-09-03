@@ -37,3 +37,16 @@ const createInnerHTML = () => {
     }
     document.querySelector('#table-display').innerHTML=innerHtml;
 }
+
+// remove person details from addressbook list
+const remove = (node)=> {
+    let addressbookData = addressbookList.find(personData=>personData._id == node.id);
+    if (!addressbookData) return;
+    const index =  addressbookList
+                  .map(personData=>personData._id)
+                  .indexOf(addressbookData._id);
+    addressbookList.splice(index,1);
+    localStorage.setItem("AddressBookList",JSON.stringify(addressbookList));
+    document.querySelector('.person-count').textContent = addressbookList.length;
+    createInnerHTML();
+}
